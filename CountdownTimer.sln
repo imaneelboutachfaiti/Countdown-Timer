@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.960
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountdownTimer", "CountdownTimer\CountdownTimer.csproj", "{15EFF624-AE52-4B4C-9556-1AE5C52DDC95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventDataAccess", "EventDataAccess\EventDataAccess.csproj", "{3F3F5FE4-CB74-4240-9855-96807C73D398}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{15EFF624-AE52-4B4C-9556-1AE5C52DDC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15EFF624-AE52-4B4C-9556-1AE5C52DDC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15EFF624-AE52-4B4C-9556-1AE5C52DDC95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F3F5FE4-CB74-4240-9855-96807C73D398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3F5FE4-CB74-4240-9855-96807C73D398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3F5FE4-CB74-4240-9855-96807C73D398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3F5FE4-CB74-4240-9855-96807C73D398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

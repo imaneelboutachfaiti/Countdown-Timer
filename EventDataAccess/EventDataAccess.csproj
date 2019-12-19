@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38BEC992-4429-488A-91BB-2DA056E7DED9}</ProjectGuid>
+    <ProjectGuid>{3F3F5FE4-CB74-4240-9855-96807C73D398}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EventDataAccess</RootNamespace>
@@ -50,10 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event.cs">
+      <DependentUpon>EventDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EventDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EventDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EventDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -79,6 +87,12 @@
     <Content Include="EventDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EventDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>EventDataModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="EventDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EventDataModel.edmx</DependentUpon>
+      <LastGenOutput>EventDataModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
