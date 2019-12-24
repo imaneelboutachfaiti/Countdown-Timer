@@ -13,6 +13,7 @@ namespace CountdownTimer.Controllers
     public class EventsController : ApiController
     {
         private CountDownTimerEntities db = new CountDownTimerEntities();
+
         /// <summary>Gets the events.</summary>
         /// <returns></returns>
         [Route("EventList")]
