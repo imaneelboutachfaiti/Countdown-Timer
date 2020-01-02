@@ -1,19 +1,65 @@
-<div class="container py-5 body">  
-    <h3 class="text-center text-uppercase">List of events</h3>
-    <table class="table table-bordered table-striped">  
-        <thead>  
-            <tr class="text-center text">  
-                <th>Event Id</th>  
-                <th>Event Name</th>  
-                <th>Due Date</th>   
-            </tr>  
-        </thead>  
-        <tbody>  
-          <tr *ngFor="let e of events">  
-            <td>{{e.Id}}</td>  
-            <td>{{e.EventName}}</td>  
-            <td>{{e.DueDate}}</td>  
-          </tr>  
-        </tbody>  
+<div class="container">  
+  <br><br>
+  <mat-card>
+    <mat-card-content>
+       <form [formGroup]="eventForm"(ngSubmit)="onFormSubmit(eventForm.value)">  
+        <table>  
+        <tr>  
+          <td class="tbl1">  
+            <mat-form-field class="demo-full-width">  
+              <input formControlName="EventName" matTooltip="Enter Event Name" matInput placeholder="Event Name">  
+            </mat-form-field>  
+            <mat-error>  
+              <span *ngIf="!eventForm.get('EventName').value && eventForm.get('EventName').EventName"></span>  
+            </mat-error>  
+          </td>  
+          <td class="tbl1">  
+            <mat-form-field class="demo-full-width">  
+              <input matInput [matDatepicker]="picker"matTooltip="Enter Due Date" formControlName="DueDate"placeholder="Choose Due Date">  
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>  
+              <mat-datepicker #picker></mat-datepicker>  
+            </mat-form-field>  
+            <mat-error>  
+              <span *ngIf="!eventForm.get('DueDate').value && eventForm.get('DueDate').touched"></span>  
+            </mat-error>  
+          </td>  
+          
+        </tr>  
+        <tr>  
+          <td></td>  
+          <td  class="content-center">  
+            <button type="submit" mat-raised-button color="accent"matTooltip="Click Submit Button"[disabled]="!eventForm.valid">Submit</button>      
+            <button type="reset" mat-raised-button color="accent"matTooltip="Click Reset Button" (click)="resetForm()">Reset</button>  
+          </td>  
+          <td>  
+            <p *ngIf="dataSaved" style="color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success" align="left">  
+              {{message}}  
+            </p> 
+            
+          </td>  
+        </tr>  
       </table>  
-    </div>    
+  <br><br>  
+<table class="table" >  
+    <tr ngclass="btn-primary">  
+      <th class="tbl2"  >Event Name</th>  
+      <th class="tbl2">Due Date</th> 
+      <th class="tbl2">Edit</th>
+       <th class="tbl2">Delete</th>
+    </tr>  
+    <tr *ngFor="let e of events">  
+      <td class="tbl2">{{e.EventName}}</td>  
+      <td class="tbl2">{{e.DueDate}}</td>  
+      <td class="tbl2">  
+        <button type="button" class="btn btn-info" matTooltip="Click Edit Button" (click)="loadEventToEdit(e.Id)">Edit</button>  
+      </td>  
+      <td class="tbl2">  
+        <button type="button" class="btn btn-danger" matTooltip="Click Delete Button" (click)="deleteEvent(e.Id)">Delete</button>  
+      </td>  
+    </tr>  
+
+  </table>  
+</form>  
+</mat-card-content>  
+</mat-card>  
+</div>  

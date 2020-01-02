@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';  
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css'; 
 
 body {
   /* The image used */
@@ -8,5 +9,4 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

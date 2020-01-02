@@ -11,12 +11,13 @@ import {Event} from './event';
 export class EventService {  
   url = 'http://localhost:50250/api/Events';
   constructor(private http: HttpClient) { }  
+
   getAllEvents(): Observable<Event[]> {  
     return this.http.get<Event[]>(this.url + '/EventList');  
   }
 
   getEventById(id: number): Observable<Event> {  
-    return this.http.get<Event>(this.url + '/FindEventById/' + id);  
+    return this.http.get<Event>(this.url + '/FindEventById?id=' + id);  
   } 
 
   createEvent(event: Event): Observable<Event> {  
@@ -24,12 +25,12 @@ export class EventService {
     return this.http.post<Event>(this.url + '/CreateEvent/',  
     event, httpOptions);  
   }  
-  updateEvent(event: Event): Observable<Event> {  
+  updateEvent(id : number,event: Event): Observable<Event> {  
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };  
-    return this.http.put<Event>(this.url + '/UpdateEvent/',  
+    return this.http.put<Event>(this.url + '/UpdateEvent?id='+id,  
     event, httpOptions);  
   }  
-  deleteEventById(id: string): Observable<number> {  
+  deleteEventById(id: number): Observable<number> {  
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };  
     return this.http.delete<number>(this.url + '/Delete?id=' +id,  
  httpOptions);  

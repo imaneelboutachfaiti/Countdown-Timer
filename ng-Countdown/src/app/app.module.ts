@@ -2,23 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+
 import {  
   MatButtonModule, MatMenuModule, MatDatepickerModule,MatNativeDateModule , MatIconModule, MatCardModule, MatSidenavModule,MatFormFieldModule,  
   MatInputModule, MatTooltipModule, MatToolbarModule  
-} from '@angular/material';  
-import { MatRadioModule } from '@angular/material/radio';  
+} from '@angular/material';   
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppComponent } from './app.component';
 import { EventComponent } from './event/event.component';
-import { CreateEventTimerComponent } from './create-event-timer/create-event-timer.component';
 import { EventService } from './event.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventComponent,
-    CreateEventTimerComponent
+    EventComponent
   ],
   imports: [
     BrowserModule,
@@ -32,14 +30,14 @@ import { EventService } from './event.service';
     MatMenuModule,  
     MatDatepickerModule,  
     MatNativeDateModule,  
-    MatIconModule,  
-    MatRadioModule,  
+    MatIconModule,   
     MatCardModule,  
     MatSidenavModule,  
     MatFormFieldModule,  
     MatInputModule,  
     MatTooltipModule,  
-    MatToolbarModule  
+    MatToolbarModule  ,
+    AppRoutingModule
      
   ],
   providers: [MatDatepickerModule,EventService,HttpClientModule],
