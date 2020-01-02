@@ -53,7 +53,7 @@ namespace CountdownTimer.Controllers
                 }
                 db.Events.Remove(e);
                 db.SaveChanges();
-                return Json(db.Events.ToList());
+                return Ok(e);
             }
         
         
@@ -70,7 +70,7 @@ namespace CountdownTimer.Controllers
                 db.Events.Add(obj);
                 db.SaveChanges();
 
-                return Json(db.Events.ToList());
+                return Ok(obj);
             
         }
 
@@ -87,7 +87,7 @@ namespace CountdownTimer.Controllers
             
                 db.Entry(obj).State = EntityState.Modified;
                 db.SaveChanges();
-                return Json(db.Events.ToList());
+                return Ok(obj);
             
         }
 
