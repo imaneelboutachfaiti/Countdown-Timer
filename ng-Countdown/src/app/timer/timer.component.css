@@ -1,23 +1,13 @@
-th,td{
-    text-align: center;
-}
-th{
-    background-color:#293956;
-    color: white;
-}
-.tbl1
-{
-    width: 400px;
-}
-.tbl2
-{
-    width: 200pxx;
-    color: white;
-}
 body{ 
 	font: normal 13px/20px Arial, Helvetica, sans-serif; word-wrap:break-word;
 	color: #eee;
 	background: #353535;
+}
+.btn{
+	color: rgb(141, 35, 70);
+	background: transparent;
+	border: 2px solid rgb(136, 13, 34);
+	border-radius: 6px;
 }
 #countdown{
 	width: 465px;
@@ -130,7 +120,7 @@ body{
 #countdown .labels li{
 	width: 102px;
 	font: bold 15px 'Droid Sans', Arial, sans-serif;
-	color: #f47321;
+	color: #8b190a;
 	text-shadow: 1px 1px 0px #000;
 	text-align: center;
 	text-transform: uppercase;

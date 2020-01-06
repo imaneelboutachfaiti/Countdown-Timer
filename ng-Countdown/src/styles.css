@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';  
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css'; 
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 
 body {
   /* The image used */

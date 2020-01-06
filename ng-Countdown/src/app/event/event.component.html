@@ -7,36 +7,29 @@
         <tr>  
           <td class="tbl1">  
             <mat-form-field class="demo-full-width">  
-              <input formControlName="EventName" matTooltip="Enter Event Name" matInput placeholder="Event Name">  
+              <input  formControlName="EventName" matTooltip="Enter Event Name" matInput placeholder="Event Name">  
             </mat-form-field>  
             <mat-error>  
               <span *ngIf="!eventForm.get('EventName').value && eventForm.get('EventName').EventName"></span>  
             </mat-error>  
           </td>  
-          <td class="tbl1">  
+        
+          <td class = "tbl1">	
             <mat-form-field class="demo-full-width">  
-              <input matInput [matDatepicker]="picker"matTooltip="Enter Due Date" formControlName="DueDate"placeholder="Choose Due Date">  
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>  
-              <mat-datepicker #picker></mat-datepicker>  
-            </mat-form-field>  
+            <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1"  formControlName="DueDate" matInput placeholder="Choose Due Date">
+            <owl-date-time #dt1></owl-date-time>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>   
+          </mat-form-field>
             <mat-error>  
               <span *ngIf="!eventForm.get('DueDate').value && eventForm.get('DueDate').touched"></span>  
-            </mat-error>  
-          </td>  
-          
-        </tr>  
+            </mat-error>
+            </td>
         <tr>  
           <td></td>  
           <td  class="content-center">  
             <button type="submit" mat-raised-button color="accent"matTooltip="Click Submit Button"[disabled]="!eventForm.valid">Submit</button>      
             <button type="reset" mat-raised-button color="accent"matTooltip="Click Reset Button" (click)="resetForm()">Reset</button>  
-          </td>  
-          <td>  
-            <p *ngIf="dataSaved" style="color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success" align="left">  
-              {{message}}  
-            </p> 
-            
-          </td>  
+          </td>
         </tr>  
       </table>  
   <br><br>  
@@ -46,6 +39,7 @@
       <th class="tbl2">Due Date</th> 
       <th class="tbl2">Edit</th>
        <th class="tbl2">Delete</th>
+       <th class="tbl2">Countdown</th>
     </tr>  
     <tr *ngFor="let e of events">  
       <td class="tbl2">{{e.EventName}}</td>  
@@ -56,6 +50,9 @@
       <td class="tbl2">  
         <button type="button" class="btn btn-danger" matTooltip="Click Delete Button" (click)="deleteEvent(e.Id)">Delete</button>  
       </td>  
+      <td class="tbl2">  
+        <a routerLink="countdowntimer"  class="btn btn-info" >Timer</a>  
+      </td>
     </tr>  
 
   </table>  
