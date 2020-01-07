@@ -1,3 +1,4 @@
+
 <div class="container">  
   <br><br>
   <mat-card>
@@ -51,7 +52,7 @@
         <button type="button" class="btn btn-danger" matTooltip="Click Delete Button" (click)="deleteEvent(e.Id)">Delete</button>  
       </td>  
       <td class="tbl2">  
-        <a routerLink="countdowntimer"  class="btn btn-info" >Timer</a>  
+        <a [routerLink]="['/countdowntimer']" [state]="{ data: e}" class="btn btn-info" >Timer </a>
       </td>
     </tr>  
 
