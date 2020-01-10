@@ -6,13 +6,6 @@ body{
 }
 .test{
   text-align: center;
-}
-
-h1{ 
-  color: #396; 
-  font-weight: 100; 
-  font-size: 40px; 
-  margin: 40px 0px 20px; 
 } 
 .btn{
 	color: rgb(141, 35, 70);
