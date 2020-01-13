@@ -1,4 +1,5 @@
 ﻿using EventDataAccess;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
@@ -21,7 +22,7 @@ namespace CountdownTimer.Controllers
         public IHttpActionResult GetEvents()
         {
             
-                return Json( db.Events.ToList());
+                return Json( db.Events.ToList().Where(e=> e.DueDate >= DateTime.Now));
             
         }
 
@@ -31,9 +32,7 @@ namespace CountdownTimer.Controllers
         [Route("FindEventById")]
         public IHttpActionResult GetEvent(int id)
         {
-            
                 return Json(db.Events.FirstOrDefault(e => e.Id == id));
-            
         }
 
         /// <summary>
